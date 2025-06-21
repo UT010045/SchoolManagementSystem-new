@@ -7,19 +7,16 @@ namespace SchoolManagementSystem.Controllers
 {
     public class CourseController
     {
-
         public void AddCourse(Course course)
         {
             using (var conn = DbCon.GetConnection())
             {
-                conn.Open();
                 string query = "INSERT INTO Course (CourseName) VALUES (@CourseName)";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@CourseName", course.CourseName);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
             }
         }
 
@@ -29,7 +26,6 @@ namespace SchoolManagementSystem.Controllers
 
             using (var conn = DbCon.GetConnection())
             {
-                conn.Open();
                 string query = "SELECT * FROM Course";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -43,7 +39,6 @@ namespace SchoolManagementSystem.Controllers
                         });
                     }
                 }
-                conn.Close();
             }
 
             return courses;
@@ -53,14 +48,12 @@ namespace SchoolManagementSystem.Controllers
         {
             using (var conn = DbCon.GetConnection())
             {
-                conn.Open();
                 string query = "DELETE FROM Course WHERE CourseId = @CourseId";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@CourseId", courseId);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
             }
         }
 
@@ -68,7 +61,6 @@ namespace SchoolManagementSystem.Controllers
         {
             using (var conn = DbCon.GetConnection())
             {
-                conn.Open();
                 string query = "UPDATE Course SET CourseName = @CourseName WHERE CourseId = @CourseId";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -76,7 +68,6 @@ namespace SchoolManagementSystem.Controllers
                     cmd.Parameters.AddWithValue("@CourseId", updatedCourse.CourseId);
                     cmd.ExecuteNonQuery();
                 }
-                conn.Close();
             }
         }
     }

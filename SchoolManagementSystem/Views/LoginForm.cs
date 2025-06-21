@@ -37,7 +37,7 @@ namespace SchoolManagementSystem
 
                 if (count > 0)
                 {
-                    DashBoard dashboard = new DashBoard();
+                    DashboardForm dashboard = new DashboardForm();
                     dashboard.Show();
                     this.Hide();  
                 }

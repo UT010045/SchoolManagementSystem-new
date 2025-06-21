@@ -89,11 +89,11 @@
     <Compile Include="Views\CourseForm.Designer.cs">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\DashBoard.cs">
+    <Compile Include="Views\DashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\DashBoard.Designer.cs">
-      <DependentUpon>DashBoard.cs</DependentUpon>
+    <Compile Include="Views\DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ExamForm.cs">
       <SubType>Form</SubType>
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="Views\CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\DashBoard.resx">
-      <DependentUpon>DashBoard.cs</DependentUpon>
+    <EmbeddedResource Include="Views\DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
